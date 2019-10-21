@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>笔试</title>
+	<link rel="stylesheet" type="text/css" href="bishi.css">
+</head>
+
+<body>
+	<div id="App">
+		<ul id="chat_list">
+			<li v-for="item in talks">
+				<span v-for="i in item.ids" class="ids">
+					<img :src="i.img" :class="i.id == '高手'?'gaoshou':i.id == '房主'?'fangzhu':''">
+					<i>{{i.id}}</i>
+				</span>
+				<span class="user">{{item.user}}:</span>
+				<!-- 内容 -->
+				<i>{{item.con}}</i>
+				<!-- 图片 -->
+				<div class="media" v-if="item.media">
+					<img :src="item.media">
+				</div>
+				<!-- 视频 -->
+				<div class="media_video" v-if="item.video">
+					<img :src="item.video" class="video_img">
+					<img src="image/video_play.png" class="video_play">
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+	<script>
+		new Vue({
+			el: '#chat_list',
+			data() {
+				return {
+					talks: [
+						{
+							ids: [
+								{
+									id: "高手",
+									img: "image/junxian/gaoshou.png",
+								},
+								{
+									id: "将军",
+									img: "image/junxian/11.png",
+								},
+							],
+							user: "当事人葛雯雯",
+							con: "第三个人娃儿我发",
+						},
+						{
+							ids: [
+								{
+									id: "士兵",
+									img: "image/junxian/1.png",
+								},
+							],
+							user: "撒大股东",
+							con: "肥肉低碳生活",
+						},
+						{
+							ids: [
+								{
+									id: "房主",
+									img: "image/junxian/fangzhu.png",
+								},
+							],
+							user: "房主",
+							con: "刮台风德怀特",
+						},
+						{
+							ids: [
+								{
+									id: "大校",
+									img: "image/junxian/8.png",
+								},
+							],
+							user: "大师啦个",
+							con: "发了图片",
+							media: "image/erweima.png",
+						},
+						{
+							ids: [
+								{
+									id: "中校",
+									img: "image/junxian/7.png",
+								},
+							],
+							user: "非当事人",
+							con: "发了视频",
+							video: "image/zhibo_img.jpg",
+						},
+					],
+				};
+			},
+		})
+	</script>
+</body>
+</html>

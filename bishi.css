@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 0;
+    outline: none;
+}
+body {
+    font-size: 14px;
+    font-family: Microsoft YaHei, 微软雅黑, 黑体, 宋体, Microsoft JhengHei, 华文细黑, STHeiti, MingLiu;
+    color: #333;
+    text-align: center;
+    background: #f6f6f6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+i {
+    font-weight: normal;
+    font-style: normal;
+}
+div, form, img, ul, ol, li, dl, dt, dd {text-align: left;}
+ul, ol, li {list-style: none;}
+img {
+    height: auto;
+    vertical-align: middle;
+}
+#chat_list {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: 100ms;
+}
+#chat_list > li {
+    padding: 7px 2.15rem 7px 0.6rem;
+    font-size: 13px;
+    line-height: 20px;
+}
+#chat_list > li span i {color: #fff;}
+#chat_list .ids {
+    position: relative;
+    display: inline-block;
+    height: 17px;
+    margin-right: 5px;
+}
+#chat_list .ids > img {
+    width: 53px;
+    height: 17px;
+    margin-top: -6px;
+}
+#chat_list .ids > img.gaoshou {width: 49px;}
+#chat_list .ids > img.fangzhu {width: 35px;}
+#chat_list .ids > i {
+    position: absolute;
+    top: 0;
+    right: 4px;
+    line-height: 17px;
+}
+#chat_list .user {
+    margin-right: 5px;
+    color: #fc701a;
+}
+.media,
+.media_video {
+    width: 50px;
+    height: 50px;
+    margin-top: 7px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.media img,
+.video_img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    max-width: 100%;
+}
+.media_video {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.video_play {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    width: 30px;
+}
